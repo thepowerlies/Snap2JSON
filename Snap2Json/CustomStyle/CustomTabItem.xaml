@@ -1,0 +1,56 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="BorderLessStyle" TargetType="TabItem" BasedOn="{StaticResource MahApps.Styles.TabItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Grid Margin="5,0,100,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <ContentPresenter x:Name="ContentSite"
+                                          Grid.Row="0"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                          ContentSource="Header" 
+                                          Margin="0,0"
+                                          Opacity="1"
+                                          RecognizesAccessKey="True"/>
+                        <Rectangle Grid.Row="1"
+                                   Name="Rectangle"
+                                   Visibility="Hidden"
+                                   Fill="{StaticResource MahApps.Brushes.AccentBase}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="5"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Rectangle" Property="Visibility" Value="Visible"/>
+                            <Setter Property="Opacity" Value="1.0"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Rectangle" Property="Visibility" Value="Hidden"/>
+                            <Setter Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                       
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Opacity" Value="0.6"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="FlowDirection" Value="RightToLeft"/>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Opacity" Value="1"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style TargetType="TabItem" BasedOn="{StaticResource BorderLessStyle}"/>
+
+</ResourceDictionary>

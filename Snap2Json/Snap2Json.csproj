@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>app_icon.ico</ApplicationIcon>
+        <UseWindowsForms>true</UseWindowsForms>
+        <Authors>NullPointer26</Authors>
+        <Product>Snap2Json</Product>
+        <FileVersion>1.1.0.0</FileVersion>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <AssemblyName>Snap2Json</AssemblyName>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Resource Include="Images\folder.png" />
+        <Resource Include="Images\diskette.png" />
+        <Resource Include="app_icon.ico" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="MahApps.Metro" Version="2.4.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="Font\arlrdbd.ttf" />
+    </ItemGroup>
+
+</Project>
